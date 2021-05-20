@@ -2,7 +2,11 @@ package it.polito.tdp.meteo.model;
 
 import java.util.List;
 
+import it.polito.tdp.meteo.DAO.MeteoDAO;
+
 public class Model {
+	
+	MeteoDAO mdao;
 	
 	private final static int COST = 100;
 	private final static int NUMERO_GIORNI_CITTA_CONSECUTIVI_MIN = 3;
@@ -11,11 +15,16 @@ public class Model {
 
 	public Model() {
 
+		mdao= new MeteoDAO();
+	}
+	
+	public List<Citta> getAllCitta(){
+		return mdao.getAllCitta();
 	}
 
 	// of course you can change the String output with what you think works best
-	public String getUmiditaMedia(int mese) {
-		return "TODO!";
+	public double getUmiditaMedia(int mese, String localita) {
+		return mdao.umiditaMedia(localita, mese);
 	}
 	
 	// of course you can change the String output with what you think works best
