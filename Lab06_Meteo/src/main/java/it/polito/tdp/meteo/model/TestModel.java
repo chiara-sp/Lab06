@@ -6,7 +6,7 @@ public class TestModel {
 		
 		Model m = new Model();
 		
-		System.out.println(m.getUmiditaMedia(2, "Torino"));
+		//System.out.println(m.getUmiditaMedia(2, "Torino"));
 		
 		System.out.println(m.trovaSequenza(5));
 		
